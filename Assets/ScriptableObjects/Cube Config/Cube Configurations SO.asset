@@ -15,21 +15,21 @@ MonoBehaviour:
   CubeColorPerPO2ValueSerializable:
     items:
     - key: 2
-      value: {r: 1, g: 0, b: 0, a: 1}
+      value: {r: 1, g: 0.4481132, b: 0.4481132, a: 1}
     - key: 4
-      value: {r: 0, g: 1, b: 0.08237815, a: 1}
+      value: {r: 0.4009434, g: 1, b: 0.45139033, a: 1}
     - key: 8
-      value: {r: 0, g: 1, b: 0.87342286, a: 1}
+      value: {r: 0.3726415, g: 1, b: 0.9215802, a: 1}
     - key: 16
-      value: {r: 1, g: 0.93989503, b: 0, a: 1}
+      value: {r: 1, g: 0.964841, b: 0.4575472, a: 1}
     - key: 32
-      value: {r: 0, g: 0.34345746, b: 1, a: 1}
+      value: {r: 0.3726415, g: 0.586989, b: 1, a: 1}
     - key: 64
-      value: {r: 1, g: 0, b: 0.93984413, a: 1}
+      value: {r: 1, g: 0.2783019, b: 0.9552435, a: 1}
     - key: 128
-      value: {r: 0.52566385, g: 0, b: 1, a: 1}
+      value: {r: 0.667753, g: 0.2971698, b: 1, a: 1}
     - key: 256
-      value: {r: 1, g: 0.29973027, b: 0, a: 1}
+      value: {r: 1, g: 0.5993741, b: 0.4292453, a: 1}
   CubeSpawnProbabilitiesSerializable:
     items:
     - key: 2
