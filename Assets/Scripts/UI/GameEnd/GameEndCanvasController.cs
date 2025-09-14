@@ -1,37 +1,41 @@
 using UnityEngine;
 
-public class GameEndCanvasController : MonoBehaviour
+namespace UI
 {
-    [SerializeField] private ScoreController _scoreController;
-    [SerializeField] private GameEndCanvasView _gameEndView;
-
-    [SerializeField] private GlobalEventsBusSO _globalEventsBus;
-
-    private void Start() 
+    public class GameEndCanvasController : MonoBehaviour
     {
-        Hide();
-        
-        _globalEventsBus.OnGameEnd += Display;
-        _globalEventsBus.OnRestartGame += Hide;
-    }
+        [SerializeField] private ScoreController _scoreController;
+        [SerializeField] private GameEndCanvasView _gameEndView;
 
-    private void OnDestroy() 
-    {
-        _globalEventsBus.OnGameEnd -= Display;
-        _globalEventsBus.OnRestartGame -= Hide;
-    }
+        [SerializeField] private GlobalEventsBusSO _globalEventsBus;
 
-    public void Display() 
-    {
-        _scoreController.Hide();
-        _gameEndView.SetScore(_scoreController.CurrentScore);
+        private void Start() 
+        {
+            Hide();
+            
+            _globalEventsBus.OnGameEnd += Display;
+            _globalEventsBus.OnRestartGame += Hide;
+        }
 
-        _gameEndView.gameObject.SetActive(true);
-    }
+        private void OnDestroy() 
+        {
+            _globalEventsBus.OnGameEnd -= Display;
+            _globalEventsBus.OnRestartGame -= Hide;
+        }
 
-    public void Hide() 
-    {
-        _scoreController.Display();
-        _gameEndView.gameObject.SetActive(false);
+        public void Display() 
+        {
+            _scoreController.Hide();
+            _gameEndView.SetScore(_scoreController.CurrentScore);
+
+            _gameEndView.gameObject.SetActive(true);
+        }
+
+        public void Hide() 
+        {
+            _scoreController.Display();
+            _gameEndView.gameObject.SetActive(false);
+        }
     }
 }
+
