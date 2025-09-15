@@ -5,8 +5,7 @@ using static PlayerInput;
 
 namespace Inputs
 {
-    [CreateAssetMenu(fileName = "MobileInputSO", menuName = "ScriptableObjects/Input/MobileInputSO")]
-    public class MobileInputSO : ScriptableObject, IMobileActions, IInputTransfer
+    public class MobileInput : IMobileActions, IInputTransfer
     {
         public event Action OnTouchEvent;
         public event Action OnLetGoEvent;

@@ -14,8 +14,6 @@ namespace Inputs
     {
         [Header("Input")]
         [SerializeField] private InputTransferSO _inputTransferSO;
-        [SerializeField] private MobileInputSO _mobileInputSO;
-        [SerializeField] private MouseInputSO _mouseInputSO;
 
         [Header("Input Type")]
         [SerializeField] private PlayerInputType _playerInputType;
@@ -28,10 +26,10 @@ namespace Inputs
             switch (_playerInputType)
             {
                 case PlayerInputType.Mouse:
-                    _inputTransferSO.SetInputTransfer(_mouseInputSO);
+                    _inputTransferSO.SetInputTransfer(new MouseInput());
                     break;
                 case PlayerInputType.Touch:
-                    _inputTransferSO.SetInputTransfer(_mobileInputSO);
+                    _inputTransferSO.SetInputTransfer(new MobileInput());
                     break;
             }
 

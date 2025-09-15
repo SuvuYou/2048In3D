@@ -96,8 +96,6 @@ namespace Cube
         {
             Coroutine shrinkCoroutine = _view.TryShrinkCube();
 
-            if (shrinkCoroutine == null) yield return null;
-
             yield return shrinkCoroutine;
 
             _onCubeDestroy?.Invoke();
@@ -107,7 +105,7 @@ namespace Cube
         {
             if (!_isInteractable) return;
 
-            if (collision.gameObject.TryGetComponent(out CubeController otherCube)) 
+            if (collision.gameObject.TryGetComponent(out CubeController otherCube))
             {
                 if (MergeSystem.TryMerge(this, otherCube, collision, out int score))
                 {
@@ -116,7 +114,7 @@ namespace Cube
                 }
             }
 
-            if (collision.gameObject.TryGetComponent(out GameEndCollider endNet)) 
+            if (collision.gameObject.TryGetComponent(out GameEndCollider endNet))
             {
                 _globalsEventsBus.TriggerOnGameEnd();
             }
